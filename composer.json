@@ -1,6 +1,6 @@
 {
-  "name": "houjit/houjit-region",
-  "description": "china region 中国城市代码表",
+  "name": "houjit/phpredis",
+  "description": "php-redis 操作类 封装",
   "license": "MIT",
   "authors": [
     {
@@ -14,7 +14,7 @@
   "minimum-stability" : "dev",
   "autoload": {
     "psr-4": {
-      "houjit\\ChinaArea\\": "src/"
+      "houjit\\phpredis\\": "src/"
     }
   }
 }
