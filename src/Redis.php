@@ -24,10 +24,10 @@ class Redis
     static private $_instance = array();
     private  $k;
     //连接属性数组
-    protected $attr = array(
-        'timeout'=>30, // 连接超时时间，redis配置文件中默认为300秒
-        'db_id'=>0, // 选择的数据库。
-    );
+    protected $attr = [
+        'timeout' => 30, // 连接超时时间，redis配置文件中默认为300秒
+        'db_id' => 0, // 选择的数据库。
+    ];
     protected $expireTime;
     protected $host;
     protected $port;
