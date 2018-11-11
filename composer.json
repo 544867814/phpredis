@@ -1,6 +1,7 @@
 {
   "name": "houjit/phpredis",
   "description": "php-redis 操作类 封装",
+  "version":"1.0",
   "license": "MIT",
   "homepage": "https://www.houjit.com",
   "authors": [
