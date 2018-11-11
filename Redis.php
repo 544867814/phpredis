@@ -19,10 +19,10 @@ class Redis
      * 实例化的对象,单例模式.
      * @var \iphp\db\Redis
      */
-    static private $_instance=array();
+    static private $_instance = array();
     private  $k;
     //连接属性数组
-    protected $attr=array(
+    protected $attr = array(
         'timeout'=>30, // 连接超时时间，redis配置文件中默认为300秒
         'db_id'=>0, // 选择的数据库。
     );
@@ -32,17 +32,17 @@ class Redis
     private function __construct($config,$attr=array())
     {
         $this->attr     = array_merge($this->attr,$attr);
-        $this->redis    = new Redis();
+        $this->redis    = new \Redis();
         $this->port     = $config['port'] ? $config['port'] : 6379;
         $this->host     = $config['host'];
         $this->prefix   = $config['prefix'];
         $this->redis->connect($this->host, $this->port, $this->attr['timeout']);
-        if($config['auth'])
+        if($config['password'])
         {
-            $this->auth($config['auth']);
-            $this->auth = $config['auth'];
+            $this->auth($config['password']);
+            $this->auth = $config['password'];
         }
-        if($config['expire']){
+        if($config['expire'] && $config['expire']>0){
             $this->expireTime = time() + $this->attr['timeout'];
         }
     }
